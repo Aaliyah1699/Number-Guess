@@ -74,3 +74,6 @@ def game_start():
         except ValueError as err:
             print("Oh no that's not a valid value... Try again.")
             print(err)
+# added for the code to run if it is being executed
+if __name__ == '__main__':
+    game_start()
