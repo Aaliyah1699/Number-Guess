@@ -14,6 +14,7 @@ def show_score():
 
 '''2nd Function to start game with attempts var, and random var = random.randint(range,nums) + print welcoming user to game and asking user for name then use f str asking {user} if they want to play'''
 
+
 def game_start():
     # variable to hold the number of attempts starting at 0
     attempts = 0
@@ -27,7 +28,7 @@ def game_start():
     game_play = input(
         f"Howdy,{name}, would you like to play the guessing game (Y/N)? ")
 
- # if user says no exit game else go to 
+ # if user says no exit game else go to
     if game_play.lower() == 'n':
         print("All good, Thanks!")
         exit()
@@ -71,6 +72,8 @@ def game_start():
         except ValueError as err:
             print("Oh no that's not a valid value... Try again.")
             print(err)
+
+
 # added for the code to run if it is being executed
 if __name__ == '__main__':
     game_start()
