@@ -14,12 +14,11 @@ def show_score():
 
 '''2nd Function to start game with attempts var, and random var = random.randint(range,nums) + print welcoming user to game and asking user for name then use f str asking {user} if they want to play'''
 
-
 def game_start():
     # variable to hold the number of attempts starting at 0
     attempts = 0
     # pick a random number between 100 - 120
-    ran_num = random.randint(100, 120)
+    ran_num = random.randint(10, 20)
     # Welcome to game statement
     print("Hey smarty pants! Welcome to the Guessing Game!")
     # Ask user their name
@@ -28,10 +27,8 @@ def game_start():
     game_play = input(
         f"Howdy,{name}, would you like to play the guessing game (Y/N)? ")
 
-
-'''1st if statement -> if answer yes - print reply and then exit() else call 1st function name w/ ()'''
-  # if user says no exit game else go to score
-   if game_play.lower() == 'n':
+ # if user says no exit game else go to 
+    if game_play.lower() == 'n':
         print("All good, Thanks!")
         exit()
     else:
@@ -39,9 +36,9 @@ def game_start():
     # while yes is the answer try and guess a number
     while game_play.lower() == 'y':
         try:
-            guess = int(input("Pick a number between 100 and 120: "))
+            guess = int(input("Pick a number between 10 and 20: "))
             # if the guess is less than 100 or greater than 120 raise error
-            if guess < 100 or guess > 120:
+            if guess < 10 or guess > 20:
                 raise ValueError("Please pick number in given range.")
 
                 # iterate over attempts
@@ -61,7 +58,7 @@ def game_start():
                         break
                     else:
                         attempts = 0
-                        ran_num = random.randint(100, 120)
+                        ran_num = random.randint(10, 20)
                         show_score()
                         continue
                 # hint else if the num is lower or higher
