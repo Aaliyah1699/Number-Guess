@@ -25,15 +25,20 @@ def game_start():
     # Ask user their name
     name = input("What's your name? ")
     # Ask if the want to play using format to insert their name
-    play = input(
+    game_play = input(
         f"Howdy,{name}, would you like to play the guessing game (Y/N)? ")
-
 
 '''1st if statement -> if answer yes - print reply and then exit() else call 1st function name w/ ()'''
    # if user says no exit game else go to score
-    if play.lower() == 'n':
+    if game_play.lower() == 'n':
         print("All good, Thanks!")
         exit()
     else:
         show_score()
-    
+    # while yes is the answer try and guess a number
+    while game_play.lower() == 'y':
+        try:
+            guess = int(input("Pick a number between 100 and 120: "))
+            # if the guess is less than 100 or greater than 120 raise error
+            if guess < 100 or guess > 120:
+                raise ValueError("Please pick number in given range.")
