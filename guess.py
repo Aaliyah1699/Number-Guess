@@ -17,5 +17,11 @@ def game_start():
     attempts = 0
     # pick a random number between 100 - 120
     ran_num = random.randint(100, 120)
+    # Welcome to game statement
+    print("Hey smarty pants! Welcome to the Guessing Game!")
+    # Ask user their name
+    name = input("What's your name? ")
+    # Ask if the want to play using format to insert their name
+    play = input(f"Howdy,{name}, would you like to play the guessing game (Y/N)? ")
 
 '''1st if statement -> if answer yes - print reply and then exit() else call 1st function name w/ ()'''
