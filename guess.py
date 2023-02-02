@@ -28,9 +28,10 @@ def game_start():
     game_play = input(
         f"Howdy,{name}, would you like to play the guessing game (Y/N)? ")
 
+
 '''1st if statement -> if answer yes - print reply and then exit() else call 1st function name w/ ()'''
-   # if user says no exit game else go to score
-    if game_play.lower() == 'n':
+  # if user says no exit game else go to score
+   if game_play.lower() == 'n':
         print("All good, Thanks!")
         exit()
     else:
@@ -42,3 +43,22 @@ def game_start():
             # if the guess is less than 100 or greater than 120 raise error
             if guess < 100 or guess > 120:
                 raise ValueError("Please pick number in given range.")
+
+                # iterate over attempts
+                attempts += 1
+                attempts_list.append(attempts)
+                '''If statements one for if they guess the right number/ how many attempts it took and want to continue or not  '''
+                # If they guessed correctly
+                if guess == ran_num:
+                    print("Cool Beans! You got it!")
+                    # How many times it took them
+                    print(f"It took you {attempts} attempts")
+                    # Ask if they want to play again
+                    play_more = input("Would you like to play again? (y/n): ")
+                    # If they say no to playing
+                    if play_more.lower() == 'n':
+                        print("Thank's for playing! Have a good one!")
+                        break
+                    else:
+                        attempts = 0
+                        
