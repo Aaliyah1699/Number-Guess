@@ -61,4 +61,16 @@ def game_start():
                         break
                     else:
                         attempts = 0
-                        
+                        ran_num = random.randint(100, 120)
+                        show_score()
+                        continue
+                # hint else if the num is lower or higher
+                else:
+                    if guess > ran_num:
+                        print("It's lower")
+                    elif guess < ran_num:
+                        print("It's higher")
+# except if they put in a value not in the range given
+        except ValueError as err:
+            print("Oh no that's not a valid value... Try again.")
+            print(err)
